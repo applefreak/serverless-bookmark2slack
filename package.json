@@ -1,0 +1,17 @@
+{
+  "name": "serverless-slackbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Poyu Chen <p820316@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "botkit": "^0.5.1",
+    "lodash": "^4.17.4",
+    "url-parse": "^1.1.8",
+    "valid-url": "^1.0.9"
+  }
+}

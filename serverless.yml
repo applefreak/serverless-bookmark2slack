@@ -1,0 +1,22 @@
+service: slackBot
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+
+custom:
+  secrets: ${file(secrets.yml)}
+  dev: dev
+  prod: bookmarks
+
+functions:
+  bookmark:
+    handler: handler.bookmark
+    environment:
+      SLACK_TOKEN: ${self:custom.secrets.SLACK_TOKEN}
+      SLACK_BOOKMARK_CHANNEL: ${self:custom.${opt:stage, self:provider.stage}}
+    events:
+     - http: 
+        path: add
+        method: POST
+        cors: true
